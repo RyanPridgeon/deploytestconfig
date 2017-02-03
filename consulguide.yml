@@ -1,0 +1,149 @@
+ADDRESSES
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 15s
+
+ZUUL
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s
+services:
+  uaa: https://uaa
+
+UAA
+
+This needs either of 2 configs.
+
+To keep the health check on https and configure for https health checks;
+
+spring:
+  cloud:
+    consul:
+      scheme: https
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s
+
+Or split the health check to a http management port;
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s
+management:
+  port: 9021
+  ssl:
+    enabled: false
+
+CUSTOMERS
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s
+
+
+EMAILS
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 5s
+
+QUESTIONNAIRES
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s
+
+CONTENT
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 5s
+
+CONTACT
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 5s
+
+AUDITS
+
+server:
+  servlet-path: /management
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 5s
+
+ENERGYSALES
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 5s
+
+ENERGY 
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s
+
+PAYMENTS
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckInterval: 5s

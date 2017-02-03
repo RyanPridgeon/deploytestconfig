@@ -1,0 +1,74 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 5s
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:1521:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    maxWait: 1000
+  jpa:
+    hibernate:
+      ddl-auto: none
+  rabbitmq:
+    addresses: localhost:5672
+
+optilead:
+  username: '{cipher}AQAIyOSDmWmWAWdNBs+zHzWODpFTnzdeI4RlK92BZmpIZpa2IiiWyvzdel3TaX3g05V+wqIAUlh0GnGANokYZkGmKcjGKSsoLgsi8amrQV7+q6aoSU7pAuhp+hm6L7+UeVd0U14Ohy/yADSuVgLpxiSFDvBu6t0R+G4fpbjI4Qdx7DcXr1B5H1pAOzgLX9FvJw3IVhKPWIHjeGWm5yN6v/4lTqwF3pCAmqgBDI/VRGWxmaae+WJlC8kGaY9WaYYDTddljgpv18eRPUodk/RE0Wf8GUy57CYCB8GL5oloyFIGGhdjiLc9BVhcXWcV+Bkrqn6UA74BqtZFt4aUANQOV5tZ9nmOOPf7FMyfIHAmxX9SOcHomtTHPC4k6eoI3oQyldA='
+  password: '{cipher}AQAIyOSDmWmWAWdNBs+zHzWODpFTnzdeI4RlK92BZmpIZpa2IiiWyvzdel3TaX3g05V+wqIAUlh0GnGANokYZkGmKcjGKSsoLgsi8amrQV7+q6aoSU7pAuhp+hm6L7+UeVd0U14Ohy/yADSuVgLpxiSFDvBu6t0R+G4fpbjI4Qdx7DcXr1B5H1pAOzgLX9FvJw3IVhKPWIHjeGWm5yN6v/4lTqwF3pCAmqgBDI/VRGWxmaae+WJlC8kGaY9WaYYDTddljgpv18eRPUodk/RE0Wf8GUy57CYCB8GL5oloyFIGGhdjiLc9BVhcXWcV+Bkrqn6UA74BqtZFt4aUANQOV5tZ9nmOOPf7FMyfIHAmxX9SOcHomtTHPC4k6eoI3oQyldA='
+  endpoint: http://localhost:9001
+
+encryption:
+  AES:
+    cbc-iv: '{cipher}AQAKU4wwwws/qYGn/MwCd/PQnLB4lJRznxMLuqMhC/kIEI20X0yWVTHAEC/6GQ9lo+DIThnEXcXhEgyPuad5VGJsaXAC5/iDjk3FS+mzcY9FQKSvEGuO28GuHYoX2TVvZern6H221IArmhm5UQQqVcn0599dvjx+6nrvui++mbFG8HmsoiEO0TsrgvIiBEXhcBo3yO5yRPRRpWP/O/ddf1snFfCFGvlGvIKdOHyT24tfUjOVr8NFam85+rMLLGuF4b6rENeG+7+fXmnmLRr/o5F51GskpHsTeM+Ck+0ChnpLYj/tHMkhK45z4SLWvWohqKmD18TsI6U1639J3fcAik+Z7dZHL6pW+WccgJpGQIOO7wSvZLOHYiXIkXXI5n+Y4WMs0Y19hTvkYaaU+5Jw+r/B'
+    seed: '{cipher}AQBrOvQBzxAYqcd3qR+kOav5hi7W0ITVUZAP4HcmuC8cZR26YawdWNSZxrJz8DYgTUzmgeuEmV2nJr07GltNal/hpOtz+mKUEfwxKuREOWBeDl9POCPrOgU8yt09S2qhSFkHwwfdhFVddULwjJmZxzfvzCF8SHG8/qI7YwpEg+gzT83WAxyY98leVyq+o/IrFXgD7qY2ZfPCFVWOvj/MMKoXPXyg/UMNVwiFDdzYYzPy6upGeOkU3l7/vYlGJdifFihqw3+Q3qm3yoUrhcgJOAdssidd0ZW2zPDrY2fdXZuqvY3jZf/mu7sNQJ4EuVTHcB/wOfuIQqGFlU1D+yHS9kiskpKtyTHUtRFip0XHKVw9QvKzVjAtrXCyVHZCn4UbLvE='
+ 
+server:
+  servlet-path: /management
+  port: ${port:9095}
+
+kana:
+  destinationAddress: test@contactus.britishgas.co.uk
+  emailPort: 25
+  emailHost: localhost
+  userName: 
+  password: 
+  protocol: smtp
+  connectionTimeOut: 30000
+  timeOut: 30000
+
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+    
+services:
+  addresses: addresses-v1
+  emails: emails
+  customers: customers-v1
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
+            
+logging:
+  level:
+    root: INFO

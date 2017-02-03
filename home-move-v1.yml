@@ -1,0 +1,69 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 15s
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:1521:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    maxWait: 1000
+  rabbitmq:
+    addresses: localhost:5672
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+kana:
+  destinationAddress: test@contactus.britishgas.co.uk
+  emailPort: 25
+  emailHost: 85.158.0.155
+  userName: britishgassmtp
+  password: JkayamlJ813lcXz
+  protocol: smtp
+  connectionTimeOut: 30000
+  timeOut: 30000
+
+server:
+  port: ${port:9011}
+  servlet-path: /management
+
+management:
+  port: 9111
+
+eureka:
+  instance:
+    statusPageUrlPath: ${server.servlet-path}/info
+    healthCheckUrlPath: ${server.servlet-path}/health
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
+
+logging:
+  level:
+    root: INFO
+
+services:
+  addresses: mock-home-move-v1
+  quote-items: mock-home-move-v1
+  emails: mock-home-move-v1
+  quotes: mock-home-move-v1

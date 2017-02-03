@@ -1,0 +1,28 @@
+server:
+  port: 9070
+  servlet-path: /management
+  
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: ${jdbc.url:jdbc:oracle:thin:@localhost:1521:xe}
+    username: ${jdbc.username:system}
+    password: ${jdbc.password:oracle}
+    testOnBorrow: true
+    validationQuery: SELECT 1 FROM DUAL
+    maxWait: 1000
+  rabbitmq:
+    addresses: ${rabbitmq.host:localhost}:${rabbitmq.port:5672}
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: ${server.servlet-path}/health
+        healthCheckInterval: 15s
+    stream:
+      bindings:
+        input:
+          destination: audits
+        output:
+          destination: audits
