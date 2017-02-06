@@ -22,7 +22,12 @@ server:
   error:
     whitelabel:
       enabled: false
+  ssl:
+    enabled: true
       
+management:
+  port: 9110
+
 services:
   emails: emails
   audits: audits 
