@@ -4,7 +4,6 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        healthCheckPath: ${server.servlet-path}/health
         healthCheckInterval: 5s
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
