@@ -46,10 +46,7 @@ ribbon:
   eureka:
    enabled: false
 
-encryption:
-  AES:
-    cbc-iv: ${aes.iv}
-    seed: ${aes.seed}
+
    
 eureka:
   instance:
