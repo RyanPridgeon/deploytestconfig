@@ -13,9 +13,13 @@ memcached:
 server:
   servlet-path: /management
   port: 9040
+  ssl:
+    enabled: true
 
 management:
   port: 9140
+  ssl:
+    enabled: false
 
 cqServerUrl: https://localhost
 
