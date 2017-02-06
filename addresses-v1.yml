@@ -1,16 +1,5 @@
 spring:
   cloud:
-    vault:
-      host: localhost
-      port: 8200
-      authentication: TOKEN
-      token: c6e98225-3eb8-4441-cb4d-45d8ebc00f01
-      scheme: http
-      pki:
-        enabled: true
-        role: microservice
-        backend: ca
-        common-name: localhost
     consul:
       host: localhost
       port: 8500
