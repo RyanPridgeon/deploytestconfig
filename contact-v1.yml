@@ -33,6 +33,13 @@ encryption:
 server:
   servlet-path: /management
   port: ${port:9095}
+  ssl:
+    enabled: true
+    
+management:
+  port: 9195
+  ssl:
+    enabled: false
 
 kana:
   destinationAddress: test@contactus.britishgas.co.uk
