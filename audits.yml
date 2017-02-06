@@ -1,6 +1,13 @@
 server:
   port: 9070
   servlet-path: /management
+  ssl:
+    enabled: true
+  
+management:
+  port: 9170
+  ssl:
+    enabled: false
   
 spring:
   datasource:
