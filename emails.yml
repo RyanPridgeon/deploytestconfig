@@ -45,6 +45,13 @@ cqEmailTemplateRepository:
 server:
   servlet-path: /management
   port: ${port:7071}
+  ssl:
+    enabled: true
+    
+management:
+  port: 7171
+  ssl:
+    enabled: false
 
 eureka:
   instance:
