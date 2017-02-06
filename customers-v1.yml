@@ -22,9 +22,13 @@ spring:
 server:
   port: ${port:9060}
   servlet-path: /management
+  ssl:
+    enabled: true
 
 management:
   port: 9160
+  ssl:
+    enabled: false
 
 customer:
   info:
