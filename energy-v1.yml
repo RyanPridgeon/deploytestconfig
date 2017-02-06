@@ -1,6 +1,13 @@
 server:
   port: 9230
+  ssl:
+    enabled: true
   
+management:
+  port: 9330
+  ssl:
+    enabled: false
+    
 spring:
   cloud:
     consul:
