@@ -1,6 +1,13 @@
 server:
   port: 9543
+  ssl:
+    enabled: true
 
+management:
+  port: 9643
+  ssl:
+    enabled: false
+    
 spring:
   redis:
     sentinel:
