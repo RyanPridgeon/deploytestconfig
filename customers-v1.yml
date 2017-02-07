@@ -72,5 +72,5 @@ logging.level:
   org.apache: 'INFO'
     
 services:
-  addresses: addresses-v1
-  energy: energy-v1
+  addresses: https://addresses-v1
+  energy: https://energy-v1
