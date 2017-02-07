@@ -4,7 +4,6 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        healthCheckPath: ${server.servlet-path}/health
         healthCheckInterval: 5s
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver
@@ -50,6 +49,13 @@ cache:
 server:
   port: 9092
   servlet-path: /management
+  ssl:
+    enabled: true
+    
+management:
+  port: 9192
+  ssl:
+    enabled: false
 
 eureka:
   instance:
