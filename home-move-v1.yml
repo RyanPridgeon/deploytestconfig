@@ -63,7 +63,10 @@ logging:
     root: INFO
 
 services:
-  addresses: mock-home-move-v1
-  quote-items: mock-home-move-v1
-  emails: mock-home-move-v1
-  quotes: mock-home-move-v1
+  addresses: https://addresses-v1
+  quote-items: https://energysales-v1
+  emails: https://emails
+  quotes: https://energysales-v1
+  customers: https://customers-v1
+  premises: https://customers-v1
+  meters: https://meters-v1
