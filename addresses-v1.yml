@@ -1,5 +1,6 @@
 spring:
   cloud:
+    config.server.health.enabled: false
     consul:
       host: localhost
       port: 8500
