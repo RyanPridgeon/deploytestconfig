@@ -4,7 +4,7 @@ spring:
       host: localhost
       port: 8500
       discovery:
-        healthCheckInterval: 15s
+        healthCheckInterval: 60s
   rabbitmq:
     addresses: localhost:5672
   redis:
