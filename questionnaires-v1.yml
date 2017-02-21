@@ -8,7 +8,7 @@ spring:
       nodes: localhost:26379
     
 memcached:
-  addresses: localhost:22121
+  addresses: localhost:11211
 
 server:
   servlet-path: /management
